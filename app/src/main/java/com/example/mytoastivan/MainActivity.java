@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView myview = (TextView) findViewById(R.id.btnDefault);
+        myview.setText("Modificando desde Java");
 
         View boton1 = findViewById(R.id.btnDefault);
         boton1.setOnClickListener(this);
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          //toast.setGravity(Gravity.TOP|Gravity.LEFT, 0,0);
          //toast.show();
      }
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
     }
 }
 
